@@ -1,5 +1,7 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
+import Typewriter from "typewriter-effect";
 
 export default function Intro() {
   return (
@@ -13,8 +15,22 @@ export default function Intro() {
 
           {/* The main title using the custom accent color */}
           <h1 className="text-theme-accent text-5xl md:text-7xl lg:text-8xl font-black leading-tight tracking-tight text-[#A3B8CC]">
-            Full stack
-            <br /> Developer
+            <Typewriter
+              options={{
+                strings: [
+                  "Full Stack Developer.",
+                  "React Developer.",
+                  "Next.js Developer.",
+                  "JavaScript Enthusiast.",
+                  "Tech Innovator.",
+                  "Problem Solver.",
+                  "Creative Coder.",
+                  "Software Engineer.",
+                ],
+                autoStart: true,
+                loop: true,
+              }}
+            />
           </h1>
 
           {/* Navigation Link */}
