@@ -63,6 +63,57 @@ export default function Navbar() {
             <path d="M12.412 14.572V10.29h1.428V16H1v-5.71h1.428v4.282h9.984zM11.524 5.245L8.17 6.686l.572 1.332 3.353-1.44-.571-1.333zM6.887 8.213l3.473 1.261.491-1.353-3.472-1.26-.492 1.352zm-.5 3.196l3.66 0 .002-1.426-3.662 0 .002 1.426zm2.337-7.228l-1.383 1.375 2.457 2.453 1.383-1.375-2.457-2.453zm4.26-2.618L14.657 0l-2.762 1.95 1.667 2.372 2.762-1.95z" />
           </svg>
         </Link>
+        {/* Microsoft learn Icon */}
+        <Link
+          href="https://learn.microsoft.com/en-us/users/wajamasara-5731/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:opacity-80 transition-opacity p-0.5"
+        >
+          {/*  Microsoft learn Icon */}
+          <svg
+            viewBox="0 0 16 16"
+            fill="currentColor"
+            className="w-9 h-9"
+            aria-hidden="true"
+          >
+            <path d="M7.462 0H0v7.19h7.462zM16 0H8.538v7.19H16zM7.462 8.211H0V16h7.462zm8.538 0H8.538V16H16z" />
+          </svg>
+        </Link>
+        {/* youtube Icon */}
+        <Link
+          href="https://www.youtube.com/@WAJAmasara"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:opacity-80 transition-opacity p-0.5"
+        >
+          {/*  youtube Icon */}
+          <svg
+            viewBox="0 0 16 16"
+            fill="currentColor"
+            className="w-9 h-9"
+            aria-hidden="true"
+          >
+            <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z" />
+          </svg>
+        </Link>
+        {/* Leetcode Icon */}
+        <Link
+          href="https://www.hackerrank.com/profile/wajamasara"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:opacity-80 transition-opacity p-0.5"
+        >
+          {/*  Leetcode Icon */}
+          <svg
+            viewBox="0 0 16 16"
+            fill="currentColor"
+            className="w-9 h-9"
+            aria-hidden="true"
+          >
+            <path d="M12 0C5.373 0 0 5.373 0 12c0 6.628 5.373 12 12 12s12-5.372 12-12c0-6.627-5.373-12-12-12zm4.333 16.5h-1.666v-2.25H13.5v2.25h-1.5v-2.25h-1.167v2.25h-1.5v-6H10.5v2.25h1.167v-2.25H13.5v-2.25h1.666v2.25H16.5v2.25h-1.667v1.5zm-2.833-3.75v-1.5h1.667v1.5H13.5z" />
+          </svg>
+        </Link>
       </div>
     </footer>
   );
