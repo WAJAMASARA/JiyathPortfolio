@@ -15,10 +15,10 @@ export default function Navbar() {
         <Link href="/" className="hover:text-gray-300 transition-colors text-base">
           Home
         </Link>
-        <Link href="/about" className="hover:text-gray-300 transition-colors text-base">
+        <Link href="#about" className="hover:text-gray-300 transition-colors text-base">
           About
         </Link>
-        <Link href="/work" className="hover:text-gray-300 transition-colors text-base">
+        <Link href="#Work" className="hover:text-gray-300 transition-colors text-base">
           Work
         </Link>
       </div>
