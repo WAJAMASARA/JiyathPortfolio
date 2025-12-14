@@ -12,7 +12,7 @@ export default function Intro() {
           </p>
 
           {/* The main title using the custom accent color */}
-          <h1 className="text-theme-accent text-5xl md:text-7xl lg:text-8xl font-black leading-tight tracking-tight">
+          <h1 className="text-theme-accent text-5xl md:text-7xl lg:text-8xl font-black leading-tight tracking-tight text-[#A3B8CC]">
             Full stack
             <br /> Developer
           </h1>
@@ -21,7 +21,7 @@ export default function Intro() {
           <div className="pt-4">
             <Link
               href="/contact"
-              className="text-white text-xl font-bold underline underline-offset-[10px] hover:text-theme-accent transition-colors"
+              className="text-white text-xl font-bold underline underline-offset-[10px]  transition-colors"
             >
               Contact Me
             </Link>
