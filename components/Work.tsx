@@ -72,6 +72,15 @@ const projects = [
     description:
       "I conducted a hands-on 3D Modeling Workshop as part of the IEEE WIE Affinity Group series, where I guided participants through fundamental and advanced 3D modeling concepts using practical demonstrations. The session focused on developing design skills, best practices in 3D modeling, and preparing participants for the upcoming ModelX 3D Design Competition. I actively mentored attendees, addressed their design challenges, and provided insights to help them transform ideas into well-structured 3D models.",
   },
+  {
+    id: 6,
+    title: "Personal Portfolio Website",
+    category: "WEB DESIGN",
+    tags: ["Next.js", "Tailwind CSS", "TypeWriter Effect", "EmailJS"],
+    image: "/Image/portfolio.png", // Placeholder image
+    description:
+      "This personal portfolio website simple website that showcases my skills, projects, and experiences as a developer. Built with Next.js for server-side rendering and optimized performance, it features a sleek design using Tailwind CSS and interactive animations powered by TypeWriter Effect. Able to send emails using EmailJS. The site is fully responsive, ensuring an optimal viewing experience across all devices.",
+  },
 ];
 
 export default function Work() {
