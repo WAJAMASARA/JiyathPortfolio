@@ -3,7 +3,6 @@
 import  { useState } from "react";
 import Image from "next/image";
 
-// 1. Dummy Data (Replace with your actual images and text)
 const projects = [
   {
     id: 1,
@@ -96,7 +95,7 @@ export default function Work() {
           >
             {/* Image Card */}
             <div className="relative overflow-hidden bg-[#2a2a4a] aspect-[4/3] mb-6 transition-transform duration-300 group-hover:-translate-y-2">
-              {/* Replace the src below with your actual local image path */}
+            
               <Image
                 src={project.image}
                 alt={project.title}
