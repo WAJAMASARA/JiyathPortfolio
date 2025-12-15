@@ -63,6 +63,15 @@ const projects = [
     description:
       "During my internship, I worked on SSO integration (Okta, Azure AD, Cognito), API deployment with APIC 3.0, AWS and DevOps practices, and on-the-fly zip streaming for efficient downloads. I also contributed to frontend authentication, built UI components with Storybook, and followed Agile and secure coding practices.",
   },
+  {
+    id: 5,
+    title: "ModelX | IEEE WIE Affinity Group of University of Moratuwa",
+    category: "Workshop",
+    tags: ["Blender", "Animation Design", "Workshop"],
+    image: "/Image/workshop.png", // Placeholder image
+    description:
+      "I conducted a hands-on 3D Modeling Workshop as part of the IEEE WIE Affinity Group series, where I guided participants through fundamental and advanced 3D modeling concepts using practical demonstrations. The session focused on developing design skills, best practices in 3D modeling, and preparing participants for the upcoming ModelX 3D Design Competition. I actively mentored attendees, addressed their design challenges, and provided insights to help them transform ideas into well-structured 3D models.",
+  },
 ];
 
 export default function Work() {

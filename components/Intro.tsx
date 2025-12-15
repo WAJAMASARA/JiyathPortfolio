@@ -19,8 +19,6 @@ export default function Intro() {
               options={{
                 strings: [
                   "Full Stack Developer.",
-                  "React Developer.",
-                  "Next.js Developer.",
                   "JavaScript Enthusiast.",
                   "Tech Innovator.",
                   "Problem Solver.",
@@ -36,7 +34,7 @@ export default function Intro() {
           {/* Navigation Link */}
           <div className="pt-4">
             <Link
-              href="/contact"
+              href="#contact"
               className="text-white text-xl font-bold underline underline-offset-[10px]  transition-colors"
             >
               Contact Me
