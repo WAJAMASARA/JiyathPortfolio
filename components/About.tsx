@@ -33,10 +33,9 @@ export default function About() {
           <p className="text-lg md:text-xl text-gray-200 leading-relaxed max-w-4xl">
             I’m a passionate Full Stack Developer with a knack for creating
             dynamic and responsive web applications. With a strong foundation in
-            both front-end and back-end technologies, I worked at Sysco Labs, a
-            Fortune 500 company, where I delivered seamless user experiences and
+            both front-end and back-end technologies, I worked at fortune 500 company, where I delivered seamless user experiences and
             robust server-side solutions. My expertise includes Next.js,
-            Java/Spring Boot, Storybook, API Connect (APIC), GCP, Cisco Kenna,
+            Java/Spring Boot, Storybook, APIC, GCP, Cisco Kenna,
             Jenkins, Single Sign-On (SSO), Okta, and AWS. I thrive in
             collaborative environments and am always eager to take on new
             challenges that push my technical abilities to the next level.

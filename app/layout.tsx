@@ -4,6 +4,7 @@ import Navigatebar from "@/components/Navigatebar";
 import Intro from "@/components/Intro";
 import Footer from "@/components/Footer";
 import About from "@/components/About";
+import Work from "@/components/Work";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,6 +29,7 @@ export default function RootLayout({
         <Navigatebar />
         <Intro />
         <About />
+        <Work />
         <Footer />
       </body>
     </html>
