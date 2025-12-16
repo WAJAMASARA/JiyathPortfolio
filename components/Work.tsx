@@ -94,28 +94,29 @@ const projects: Project[] = [
 ];
 
 export default function Work() {
-  // 2. Fix: Explicitly tell useState it can hold a Project OR null
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   return (
     <section
-      className="w-full bg-[#231F20] text-white py-20 px-6 md:px-16 font-sans"
+      // UPDATED: Added overflow-x-hidden and adjusted padding for mobile (px-4)
+      className="w-full bg-[#231F20] text-white py-16 px-4 md:px-16 font-sans overflow-x-hidden"
       id="Work"
     >
       {/* --- Header Section --- */}
       <div className="max-w-6xl mx-auto">
-        <div className="flex items-center gap-6 mb-8">
-          <h1 className="text-6xl md:text-7xl font-black text-[#9ca3af] tracking-tight">
+        <div className="flex items-center gap-4 md:gap-6 mb-8">
+          {/* UPDATED: Text size adjusted for mobile (text-4xl) to prevent cut-off */}
+          <h1 className="text-5xl md:text-7xl font-black text-[#9ca3af] tracking-tight shrink-0">
             Work
           </h1>
-          <div className="h-0.5 bg-gray-600 flex-grow mt-4 opacity-50"></div>
+          <div className="h-0.5 bg-gray-600 flex-grow mt-2 md:mt-4 opacity-50"></div>
         </div>
 
         <p className="max-w-2xl text-lg text-gray-400 leading-relaxed"></p>
       </div>
 
       {/* --- Grid Section --- */}
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
         {projects.map((project) => (
           <div
             key={project.id}
@@ -123,7 +124,7 @@ export default function Work() {
             className="group cursor-pointer"
           >
             {/* Image Card */}
-            <div className="relative overflow-hidden bg-[#2a2a4a] aspect-[4/3] mb-6 transition-transform duration-300 group-hover:-translate-y-2">
+            <div className="relative overflow-hidden bg-[#2a2a4a] aspect-[4/3] mb-6 transition-transform duration-300 group-hover:-translate-y-2 rounded-sm">
               <Image
                 src={project.image}
                 alt={project.title}
@@ -139,7 +140,7 @@ export default function Work() {
               <h3 className="text-xl font-bold tracking-wide text-white mb-2">
                 {project.title}
               </h3>
-              <div className="flex gap-3 text-sm text-gray-400 uppercase tracking-widest font-medium flex-wrap">
+              <div className="flex gap-2 md:gap-3 text-sm text-gray-400 uppercase tracking-widest font-medium flex-wrap">
                 {project.tags.map((tag, index) => (
                   <span key={index}>{tag}</span>
                 ))}
@@ -152,27 +153,29 @@ export default function Work() {
       {/* --- Popup Modal --- */}
       {selectedProject && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-4"
-          // Close modal when clicking outside
+          className="fixed inset-0 z-50 flex items-center justify-center p-2 md:p-4"
           onClick={() => setSelectedProject(null)}
         >
-          {/* Slightly invisible background (Backdrop) */}
+          {/* Backdrop */}
           <div className="absolute inset-0 bg-black/80 backdrop-blur-sm"></div>
 
           {/* Modal Content */}
           <div
-            className="relative bg-[#1a1a1a] border border-gray-700 w-full max-w-3xl rounded-lg shadow-2xl overflow-hidden animate-in fade-in zoom-in duration-200"
-            onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside modal
+            // UPDATED: Width set to w-[95%] for mobile safety, padding adjusted
+            className="relative bg-[#1a1a1a] border border-gray-700 w-[95%] md:w-full max-w-3xl rounded-lg shadow-2xl 
+                       max-h-[85vh] md:max-h-[90vh] overflow-y-auto 
+                       animate-in fade-in zoom-in duration-200"
+            onClick={(e) => e.stopPropagation()}
           >
             {/* Close Button */}
             <button
               onClick={() => setSelectedProject(null)}
-              className="absolute top-4 right-4 bg-gray-800 hover:bg-gray-700 text-white rounded-full p-2 z-10 transition-colors"
+              className="absolute top-3 right-3 md:top-4 md:right-4 bg-gray-800 hover:bg-gray-700 text-white rounded-full p-2 z-10 transition-colors"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
+                width="20"
+                height="20"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
@@ -186,7 +189,7 @@ export default function Work() {
             </button>
 
             {/* Modal Image */}
-            <div className="relative h-64 w-full">
+            <div className="relative h-48 md:h-64 w-full flex-shrink-0">
               <Image
                 src={selectedProject.image}
                 alt={selectedProject.title}
@@ -196,28 +199,28 @@ export default function Work() {
             </div>
 
             {/* Modal Text */}
-            <div className="p-8">
-              <h2 className="text-3xl font-bold mb-2">
+            <div className="p-5 md:p-8">
+              <h2 className="text-2xl md:text-3xl font-bold mb-3 md:mb-2">
                 {selectedProject.title}
               </h2>
-              <div className="flex gap-2 mb-6 flex-wrap">
+              <div className="flex gap-2 mb-4 md:mb-6 flex-wrap">
                 {selectedProject.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="text-xs bg-gray-800 px-2 py-1 rounded text-gray-300 border border-gray-700"
+                    className="text-[10px] md:text-xs bg-gray-800 px-2 py-1 rounded text-gray-300 border border-gray-700"
                   >
                     {tag}
                   </span>
                 ))}
               </div>
-              <p className="text-gray-300 leading-relaxed text-lg">
+              <p className="text-gray-300 leading-relaxed text-base md:text-lg">
                 {selectedProject.description}
               </p>
 
-              <div className="mt-8 pt-6 border-t border-gray-700 flex justify-end">
+              <div className="mt-6 md:mt-8 pt-6 border-t border-gray-700 flex justify-end">
                 <button
                   onClick={() => setSelectedProject(null)}
-                  className="px-6 py-2 bg-white text-black font-bold hover:bg-gray-200 transition-colors"
+                  className="px-6 py-2 bg-white text-black font-bold hover:bg-gray-200 transition-colors text-sm md:text-base rounded-sm"
                 >
                   Close Project
                 </button>
