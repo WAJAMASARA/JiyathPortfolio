@@ -49,7 +49,7 @@ export default function Intro() {
            */}
           <div className="aspect-square relative rounded-[40px] overflow-hidden bg-gray-800/50">
             <Image
-              src="/Image/cartoonprofile.png" // profile image
+              src="/JiyathPortfolio/Image/cartoonprofile.png" // profile image
               alt="Jiyath - Full Stack Developer"
               fill // This makes the image fill the container
               className="object-cover object-center"

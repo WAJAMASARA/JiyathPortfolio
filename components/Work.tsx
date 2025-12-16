@@ -19,7 +19,7 @@ const projects: Project[] = [
     title: "Product Ordering Platform | Sysco Labs Project Summit",
     category: "WEB DESIGN",
     tags: ["React", "PostgreSQL", "AWS", "Docker", "Spring Boot", "JAVASCRIPT"],
-    image: "/Image/summit.png",
+    image: "/JiyathPortfolio/Image/summit.png",
     description:
       "This project, developed as part of the Sysco Summit conducted by Sysco Labs, is a scalable food product ordering platform that allows users to search for products, manage a shopping cart, and complete purchases. It is built using a microservices architecture to ensure modularity, scalability, and efficient inter-service communication, with backend services implemented in Spring Boot and deployed on AWS using Docker for consistent and reliable environments.",
   },
@@ -33,7 +33,7 @@ const projects: Project[] = [
       "YF-S201",
       "IR and Ultrasonic Sensors",
     ],
-    image: "/Image/Hardware.png",
+    image: "/JiyathPortfolio/Image/Hardware.png",
     description:
       "This first-year hardware project, selected for the EXMO exhibition at the University of Moratuwa, is an automated liquid dispenser system designed to improve efficiency and accuracy in industrial and commercial environments. The system minimizes manual handling and wastage by enabling precise liquid dispensing through sensor-driven automation, using an Arduino-based control unit and a user-friendly input interface for accurate quantity selection and cost calculation.",
   },
@@ -50,7 +50,7 @@ const projects: Project[] = [
       "MongoDB",
       "Firebase",
     ],
-    image: "/Image/online.png",
+    image: "/JiyathPortfolio/Image/online.png",
     description:
       "This second-year undergraduate project, developed for Skymax Engineering Pvt Ltd, is a comprehensive online service marketplace that connects consumers with service providers across labor and professional domains. The platform includes dedicated mobile applications for providers and consumers, along with an administrative web portal, and is built using modern technologies to ensure scalability, cross-platform compatibility, and efficient real-time data management.",
   },
@@ -69,7 +69,7 @@ const projects: Project[] = [
       "Cognito",
       "Storybook",
     ],
-    image: "/Image/intern.png",
+    image: "/JiyathPortfolio/Image/intern.png",
     description:
       "During my internship, I worked on SSO integration (Okta, Azure AD, Cognito), API deployment with APIC 3.0, AWS and DevOps practices, and on-the-fly zip streaming for efficient downloads. I also contributed to frontend authentication, built UI components with Storybook, and followed Agile and secure coding practices.",
   },
@@ -78,7 +78,7 @@ const projects: Project[] = [
     title: "ModelX | IEEE WIE Affinity Group of University of Moratuwa",
     category: "Workshop",
     tags: ["Blender", "Animation Design", "Workshop"],
-    image: "/Image/workshop.png",
+    image: "/JiyathPortfolioImage/workshop.png",
     description:
       "I conducted a hands-on 3D Modeling Workshop as part of the IEEE WIE Affinity Group series, where I guided participants through fundamental and advanced 3D modeling concepts using practical demonstrations. The session focused on developing design skills, best practices in 3D modeling, and preparing participants for the upcoming ModelX 3D Design Competition. I actively mentored attendees, addressed their design challenges, and provided insights to help them transform ideas into well-structured 3D models.",
   },
@@ -87,7 +87,7 @@ const projects: Project[] = [
     title: "Personal Portfolio Website",
     category: "WEB DESIGN",
     tags: ["Next.js", "Tailwind CSS", "TypeWriter Effect", "EmailJS"],
-    image: "/Image/portfolio.png",
+    image: "/JiyathPortfolio/Image/portfolio.png",
     description:
       "This personal portfolio website simple website that showcases my skills, projects, and experiences as a developer. Built with Next.js for server-side rendering and optimized performance, it features a sleek design using Tailwind CSS and interactive animations powered by TypeWriter Effect. Able to send emails using EmailJS. The site is fully responsive, ensuring an optimal viewing experience across all devices.",
   },
