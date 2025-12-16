@@ -78,7 +78,7 @@ const projects: Project[] = [
     title: "ModelX | IEEE WIE Affinity Group of University of Moratuwa",
     category: "Workshop",
     tags: ["Blender", "Animation Design", "Workshop"],
-    image: "/JiyathPortfolioImage/workshop.png",
+    image: "/JiyathPortfolio/Image/workshop.png",
     description:
       "I conducted a hands-on 3D Modeling Workshop as part of the IEEE WIE Affinity Group series, where I guided participants through fundamental and advanced 3D modeling concepts using practical demonstrations. The session focused on developing design skills, best practices in 3D modeling, and preparing participants for the upcoming ModelX 3D Design Competition. I actively mentored attendees, addressed their design challenges, and provided insights to help them transform ideas into well-structured 3D models.",
   },
