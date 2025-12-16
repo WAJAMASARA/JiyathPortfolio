@@ -1,28 +1,36 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef, FormEvent } from "react";
 import emailjs from "@emailjs/browser";
 
 export default function ContactForm() {
-  const form = useRef();
+  // FIX: Initialize useRef with null and strictly type it as an HTMLFormElement
+  const form = useRef<HTMLFormElement>(null);
   const [status, setStatus] = useState("idle"); // 'idle' | 'loading' | 'success' | 'error'
 
-  const sendEmail = (e: { preventDefault: () => void; target: { reset: () => void; }; }) => {
+  // FIX: Use standard React.FormEvent type for better safety
+  const sendEmail = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    // Safety check: ensure form exists before sending
+    if (!form.current) return;
+
     setStatus("loading");
 
     // Replace these with your actual IDs from EmailJS
-const SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
-const TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
-const PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+    // Adding || "" prevents TypeScript errors if env vars are undefined
+    const SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "";
+    const TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "";
+    const PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "";
 
     emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form.current, PUBLIC_KEY).then(
-        (result: { text: any; }) => {
+      (result: { text: string }) => {
         console.log(result.text);
         setStatus("success");
-        e.target.reset(); // Clear form after success
+        // FIX: Reset using the ref directly
+        form.current?.reset();
       },
-      (error: { text: unknown; }) => {
+      (error: { text: string }) => {
         console.log(error.text);
         setStatus("error");
       }
@@ -30,7 +38,10 @@ const PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
   };
 
   return (
-    <div className="bg-[#231F20] min-h-screen w-full flex items-center justify-center p-6 text-white font-sans" id="contact">
+    <div
+      className="bg-[#231F20] min-h-screen w-full flex items-center justify-center p-6 text-white font-sans"
+      id="contact"
+    >
       <div className="w-full max-w-4xl grid grid-cols-1 lg:grid-cols-2 gap-12">
         {/* --- LEFT SIDE: Header & Text --- */}
         <div className="lg:col-span-2 flex items-center justify-between mb-4">
@@ -97,7 +108,7 @@ const PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
                 name="message" // Matches {{message}} in EmailJS template
                 id="message"
                 required
-                rows="4"
+                rows={4}
                 placeholder=" "
                 className="peer w-full bg-transparent border-b border-gray-500 py-3 text-white focus:outline-none focus:border-[#4EE1A0] transition-colors resize-none"
               ></textarea>

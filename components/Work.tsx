@@ -1,15 +1,25 @@
 "use client";
 
-import  { useState } from "react";
+import { useState } from "react";
 import Image from "next/image";
 
-const projects = [
+// 1. Define the shape of a Project object
+interface Project {
+  id: number;
+  title: string;
+  category: string;
+  tags: string[];
+  image: string;
+  description: string;
+}
+
+const projects: Project[] = [
   {
     id: 1,
     title: "Product Ordering Platform | Sysco Labs Project Summit",
     category: "WEB DESIGN",
     tags: ["React", "PostgreSQL", "AWS", "Docker", "Spring Boot", "JAVASCRIPT"],
-    image: "/Image/summit.png", // Placeholder image
+    image: "/Image/summit.png",
     description:
       "This project, developed as part of the Sysco Summit conducted by Sysco Labs, is a scalable food product ordering platform that allows users to search for products, manage a shopping cart, and complete purchases. It is built using a microservices architecture to ensure modularity, scalability, and efficient inter-service communication, with backend services implemented in Spring Boot and deployed on AWS using Docker for consistent and reliable environments.",
   },
@@ -23,7 +33,7 @@ const projects = [
       "YF-S201",
       "IR and Ultrasonic Sensors",
     ],
-    image: "/Image/Hardware.png", // Placeholder image
+    image: "/Image/Hardware.png",
     description:
       "This first-year hardware project, selected for the EXMO exhibition at the University of Moratuwa, is an automated liquid dispenser system designed to improve efficiency and accuracy in industrial and commercial environments. The system minimizes manual handling and wastage by enabling precise liquid dispensing through sensor-driven automation, using an Arduino-based control unit and a user-friendly input interface for accurate quantity selection and cost calculation.",
   },
@@ -40,7 +50,7 @@ const projects = [
       "MongoDB",
       "Firebase",
     ],
-    image: "/Image/online.png", // Placeholder image
+    image: "/Image/online.png",
     description:
       "This second-year undergraduate project, developed for Skymax Engineering Pvt Ltd, is a comprehensive online service marketplace that connects consumers with service providers across labor and professional domains. The platform includes dedicated mobile applications for providers and consumers, along with an administrative web portal, and is built using modern technologies to ensure scalability, cross-platform compatibility, and efficient real-time data management.",
   },
@@ -59,7 +69,7 @@ const projects = [
       "Cognito",
       "Storybook",
     ],
-    image: "/Image/intern.png", // Placeholder image
+    image: "/Image/intern.png",
     description:
       "During my internship, I worked on SSO integration (Okta, Azure AD, Cognito), API deployment with APIC 3.0, AWS and DevOps practices, and on-the-fly zip streaming for efficient downloads. I also contributed to frontend authentication, built UI components with Storybook, and followed Agile and secure coding practices.",
   },
@@ -68,7 +78,7 @@ const projects = [
     title: "ModelX | IEEE WIE Affinity Group of University of Moratuwa",
     category: "Workshop",
     tags: ["Blender", "Animation Design", "Workshop"],
-    image: "/Image/workshop.png", // Placeholder image
+    image: "/Image/workshop.png",
     description:
       "I conducted a hands-on 3D Modeling Workshop as part of the IEEE WIE Affinity Group series, where I guided participants through fundamental and advanced 3D modeling concepts using practical demonstrations. The session focused on developing design skills, best practices in 3D modeling, and preparing participants for the upcoming ModelX 3D Design Competition. I actively mentored attendees, addressed their design challenges, and provided insights to help them transform ideas into well-structured 3D models.",
   },
@@ -77,14 +87,15 @@ const projects = [
     title: "Personal Portfolio Website",
     category: "WEB DESIGN",
     tags: ["Next.js", "Tailwind CSS", "TypeWriter Effect", "EmailJS"],
-    image: "/Image/portfolio.png", // Placeholder image
+    image: "/Image/portfolio.png",
     description:
       "This personal portfolio website simple website that showcases my skills, projects, and experiences as a developer. Built with Next.js for server-side rendering and optimized performance, it features a sleek design using Tailwind CSS and interactive animations powered by TypeWriter Effect. Able to send emails using EmailJS. The site is fully responsive, ensuring an optimal viewing experience across all devices.",
   },
 ];
 
 export default function Work() {
-  const [selectedProject, setSelectedProject] = useState(null);
+  // 2. Fix: Explicitly tell useState it can hold a Project OR null
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   return (
     <section
@@ -113,7 +124,6 @@ export default function Work() {
           >
             {/* Image Card */}
             <div className="relative overflow-hidden bg-[#2a2a4a] aspect-[4/3] mb-6 transition-transform duration-300 group-hover:-translate-y-2">
-            
               <Image
                 src={project.image}
                 alt={project.title}
@@ -129,7 +139,7 @@ export default function Work() {
               <h3 className="text-xl font-bold tracking-wide text-white mb-2">
                 {project.title}
               </h3>
-              <div className="flex gap-3 text-sm text-gray-400 uppercase tracking-widest font-medium">
+              <div className="flex gap-3 text-sm text-gray-400 uppercase tracking-widest font-medium flex-wrap">
                 {project.tags.map((tag, index) => (
                   <span key={index}>{tag}</span>
                 ))}
@@ -190,7 +200,7 @@ export default function Work() {
               <h2 className="text-3xl font-bold mb-2">
                 {selectedProject.title}
               </h2>
-              <div className="flex gap-2 mb-6">
+              <div className="flex gap-2 mb-6 flex-wrap">
                 {selectedProject.tags.map((tag) => (
                   <span
                     key={tag}
